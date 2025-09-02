@@ -23,7 +23,7 @@ jobs:
       - name: Build web app
         env:
           GCP_CREDENTIALS_JSON: ${{ secrets.GCP_CREDENTIALS }}
-        run: flutter build web --release --dart-define=GCP_CREDENTIALS="$GCP_CREDENTIALS_JSON" --base-href /${{ github.event.repository.name }}/
+        run: flutter build web --release --dart-define=GCP_CREDENTIALS='$GCP_CREDENTIALS_JSON' --base-href /${{ github.event.repository.name }}/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
